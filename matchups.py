@@ -16,6 +16,10 @@ week6=[]
 week7=[]
 week8=[]
 
+f = open('week1.txt','r')
+for x in f.readlines():
+    week1.append(x, end='')
+f.close()
 
 matches = []
 
@@ -28,7 +32,7 @@ while len(matches) < 6:
     league.remove(faction3)
     
 
- #def 2 dvr  
+
     if faction1:
         i=0
         while i < 2:
@@ -37,10 +41,8 @@ while len(matches) < 6:
             matches.append(team1+' v. '+team2)
             faction1.remove(team1)
             faction2.remove(team2)
-            #print(matches)
             i=i+1
-            #input()
- #raiders   2 rvi
+
     if faction2:
         i=0
         while i < 2:
@@ -49,10 +51,8 @@ while len(matches) < 6:
             matches.append(team1+' v. '+team2)
             faction2.remove(team1)
             faction3.remove(team2)
-            #print(matches)
             i=i+1
-            #input()
-#invader 2 ivd
+
     if faction3:
         i=0
         while i < 2:
@@ -61,17 +61,13 @@ while len(matches) < 6:
             matches.append(team3+' v. '+team4)
             faction1.remove(team4)
             faction3.remove(team3)
-            #print(matches)
             i=i+1
-            #input()
-
 
 print(matches)
 input()
 weekly_matches = open("THIS WEEK.txt", "w")
 for match in matches:
     weekly_matches.write(match+"\n")
-
 weekly_matches.close()
     
 
